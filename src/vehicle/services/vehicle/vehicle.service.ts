@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { VEHICLE_REPOSITORY } from 'src/constants';
-import { OperationResult } from 'src/vehicle/dto/operation-result';
+import { OperationResult } from 'src/shared/dto/operation-result.dto';
 import { Repository } from 'typeorm';
 import { Vehicle } from '../../entities/vehicle.entity';
 import { VehicleProviderService } from '../vehicle-provider/vehicle-provider.service';
