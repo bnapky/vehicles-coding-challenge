@@ -4,6 +4,8 @@ import { UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express/multer';
 import { UploadedFile } from '@nestjs/common';
 import { Response } from 'express';
+import { OperationResult } from '../shared/dto/operation-result.dto';
+import { Vehicle } from './entities/vehicle.entity';
 
 @Controller('vehicles')
 export class VehicleController {
@@ -11,7 +13,7 @@ export class VehicleController {
 
   @Post(':provider')
   @UseInterceptors(FileInterceptor('vehicles'))
-  uploadFile(
+  async uploadFile(
     @UploadedFile() file: Express.Multer.File,
     @Param('provider') provider: string,
     @Res() res: Response
@@ -26,7 +28,10 @@ export class VehicleController {
 
     const csv = file.buffer.toString();
 
-    return this.vehicleService.importFromCsv(csv, provider);
+    const result: OperationResult<Vehicle[]> = await this.vehicleService
+      .importFromCsv(csv, provider);
+
+    res.send(result);
   }
 
   @Get()

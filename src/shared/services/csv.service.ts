@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as csv from 'csvtojson';
-import { ColumnMap } from 'src/vehicle/entities/column-map';
+import { ColumnMap } from '../../vehicle/entities/column-map';
 
 @Injectable()
 export class CsvService {

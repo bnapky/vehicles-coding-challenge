@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { VEHICLE_PROVIDER_REPOSITORY } from 'src/constants';
+import { VEHICLE_PROVIDER_REPOSITORY } from '../../../constants';
 import { VehicleProvider } from 'src/vehicle/entities/vehicle-provider.entity';
 import { Repository } from 'typeorm';
 
