@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
-import { VehicleService } from './vehicle.service';
 import { VehicleController } from './vehicle.controller';
 import { DatabaseModule } from 'src/database/database.module';
+import { VehicleService } from './services/vehicle/vehicle.service';
+import { vehicleProviders } from './vehicle.providers';
+import { VehicleProviderService } from './services/vehicle-provider/vehicle-provider.service';
 
 @Module({
   imports: [
@@ -11,7 +13,9 @@ import { DatabaseModule } from 'src/database/database.module';
     VehicleController
   ],
   providers: [
-    VehicleService
+    ...vehicleProviders,
+    VehicleService,
+    VehicleProviderService,
   ]
 })
 export class VehicleModule { }
