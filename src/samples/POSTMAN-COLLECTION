@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "21866b97-3e4b-4e95-9d5a-3fa8b3eea692",
+		"name": "Beon Vehicle Csv Import Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/vehicles/BobDylan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "vehicles",
+							"type": "file",
+							"src": "./JohnDoe.csv"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehicles/JohnDoe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehicles",
+						"JohnDoe"
+					]
+				},
+				"description": "CSV File provided at src/samples/BobDylan.csv"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/vehicles/BobDylan Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "vehicles",
+							"type": "file",
+							"src": "./BobDylan.csv"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehicles/BobDylan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehicles",
+						"BobDylan"
+					]
+				},
+				"description": "CSV File provided at src/samples/BobDylan.csv"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehicles"
+					]
+				},
+				"description": "Fetch Vehicle List"
+			},
+			"response": []
+		}
+	]
+}
