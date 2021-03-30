@@ -11,6 +11,8 @@ async function bootstrap() {
   // Assumed/pre-existing vehicle providers
   VEHICLE_PROVIDERS.forEach(async x => await providerService.insert(x));
 
-  await app.listen(process.env.PORT || 3000);
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+  console.log(`App running on port ${port}`);
 }
 bootstrap();
